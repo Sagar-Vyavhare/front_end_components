@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root{
+    --body-color:#e4e9f7;
+    --sidebar-color:#fff;
+    --primary-color:#695cfe;
+    --primary-color-light:#f6f6ff;
+    --togle-color:#ddd;
+    --text-color:#707070;
+
+    --tran-03:all 0.3s ease;
+    --tran-04:all 0.4s ease;
+    --tran-05:all 0.5s ease;
+    --tran-06:all 0.6s ease;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+body{
+    background-color: var(--body-color);
+    height: 100vh;
+    transition: var(--tran-04);
+}
+
+body.dark{
+    --body-color:#18191a;
+    --sidebar-color:#242526;
+    --primary-color:#3a3b3c;
+    --primary-color-light:#3a3b3c;
+    --togle-color:#fff;
+    --text-color:#ccc;
+}
+
+.sideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100lvh;
+    width: 15.6rem;
+    background-color: var(--sidebar-color);
+    padding: 10px 12px;
+    transition: var(--tran-04);
+    white-space: nowrap; 
+    opacity: 1;
+}
+/* .sideBar.close .menuBar:hover .text{
+
+    opacity: 1;
+}
+.sideBar.close:hover{
+
+        width: 15.6rem;
+
+} */
+.sideBar.close{
+    width: 5.2rem;
+}
+
+.sideBar.close .text{
+    opacity: 0;
+}
+
+
+.sideBar .text{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sideBar .img{
+    min-width: 3.7rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.sideBar .img-text .img{
+    /* width: 4rem; */
+    border-radius: 4px; 
+    /* background: #000; */
+}
+.sideBar .img-text{
+    display: flex;
+    align-items: center;
+}
+header .img-text .header-text{
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    font-family: 'Pacifico', cursive;
+}
+
+.header-text .name{
+    font-weight: 500;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.4rem;
+    /* letter-spacing: 0.1rem; */
+}
+
+.header-text .profession{
+    margin-top: -2px;
+}
+.sideBar header{
+    position: relative;
+}
+
+.sideBar header .toggle{
+    position: absolute;
+    right: -2.2rem;
+    top: 30%;
+    translate: -50% 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--togle-color);
+    cursor: pointer;
+}
+
+.sideBar.close header .toggle{
+    rotate: 180deg;
+}
+
+.sideBar li .icon{
+    font-size: 1.2rem;
+    min-width: 3.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideBar li .icon,
+.sideBar li .text
+{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sideBar li{
+    height: 2.8rem;
+    /* background: #dc2c2c; */
+    margin-top: 10px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.sideBar li a{
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: var(--tran-03);
+}
+
+.sideBar li a:hover{
+    background: var(--primary-color);
+}
+.sideBar li a:hover .icon,
+.sideBar li a:hover .text{
+color: var(--primary-color-light);
+}
+body.dark .sideBar li a:hover .icon,
+body.dark .sideBar li a:hover .text{
+    color: var(--togle-color);
+}
+
+.sideBar .serchBar{
+    background:var(--primary-color-light);
+    /* height: 4000rem; */
+}
+.serchBar input{
+    height: 100%;
+    width: 100%;
+    background: var(--primary-color-light);
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    /* border-radius: 6rem; */
+}
+
+.sideBar .menuBar{
+    height: calc(100svh - 8.3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuBar .mode{
+    background: var(--primary-color-light);
+    position: relative;
+}
+
+.menuBar .mode .moon-sun{
+    height: 3.1rem;
+    width: 3.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.menuBar .mode i{
+    position: absolute;
+}
+
+.menuBar .mode i.sun{
+    opacity: 0;
+}
+
+.menuBar .mode .toggle-switch{
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 3.7rem;
+}
+
+.toggle-switch .switch{
+    position: relative;
+    height: 1.7rem;
+    width: 3.5rem;
+    border-radius: 25rem;
+    background: var(--togle-color);
+}
+.switch::after{
+    content: '';
+    border-radius: 50%;
+    top: 50%;
+    left: calc(50% + 0.3rem);
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    position: absolute;
+height: 1.25rem;
+width: 1.25rem;
+transition: var(--tran-03);
+}
+
+body.dark .switch::after{
+    left: calc(0% + 0.3rem);
+}
